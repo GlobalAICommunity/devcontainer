@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "containerGroups_dev_henk_001_name": {
-            "defaultValue": "dev-henk-001",
+        "name": {
+            "defaultValue": "devcontainer",
             "type": "String"
         }
     },
@@ -12,13 +12,13 @@
         {
             "type": "Microsoft.ContainerInstance/containerGroups",
             "apiVersion": "2021-03-01",
-            "name": "[parameters('containerGroups_dev_henk_001_name')]",
+            "name": "[parameters('name')]",
             "location": "westeurope",
             "properties": {
                 "sku": "Standard",
                 "containers": [
                     {
-                        "name": "[parameters('containerGroups_dev_henk_001_name')]",
+                        "name": "[parameters('name')]",
                         "properties": {
                             "image": "hboelman/devcontainer:1",
                             "ports": [
@@ -34,7 +34,7 @@
                             "environmentVariables": [],
                             "resources": {
                                 "requests": {
-                                    "memoryInGB": 1.5,
+                                    "memoryInGB": 2,
                                     "cpu": 1
                                 }
                             }
