@@ -20,7 +20,7 @@
                     {
                         "name": "[parameters('name')]",
                         "properties": {
-                            "image": "hboelman/devcontainer:1",
+                            "image": "hboelman/devcontainer:latest",
                             "ports": [
                                 {
                                     "protocol": "TCP",
